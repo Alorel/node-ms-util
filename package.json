@@ -27,6 +27,7 @@
   "devDependencies": {
     "ava": "^0.17",
     "babel-cli": "^6.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-latest": "^6.0",
     "babel-register": "^6.0",
     "coveralls": "^2.11",
