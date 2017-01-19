@@ -1,0 +1,31 @@
+{
+  "name": "ms-util",
+  "version": "0.1.0",
+  "description": "For all your millisecond conversion needs",
+  "main": "./dist/ms-util.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "babel src/index.js | uglifyjs --mangle --compress > dist/ms-util.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alorel/node-ms-util.git"
+  },
+  "keywords": [
+    "ms",
+    "millisecond",
+    "convert"
+  ],
+  "author": "Alorel <a.molcanovas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alorel/node-ms-util/issues"
+  },
+  "homepage": "https://github.com/Alorel/node-ms-util#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18",
+    "babel-preset-latest": "^6.16",
+    "husky": "^0.12",
+    "uglify-js": "^2.7.5"
+  }
+}
