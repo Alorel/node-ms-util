@@ -1,6 +1,5 @@
 cache:
   - node_modules
-  - %APPDATA%\npm
 environment:
   matrix:
     - nodejs_version: '7'
