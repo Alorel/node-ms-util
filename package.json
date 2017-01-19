@@ -5,8 +5,8 @@
   "main": "./dist/ms-util.min.js",
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text ava",
-    "babelise:index": "babel ./src/index.js | uglifyjs --mangle --compress > ./dist/ms-util.min.js",
-    "dist": "npm run babelise:index && npm run doctoc && npm test",
+    "babelise": "babel ./src/index.js | uglifyjs --mangle --compress --comments Copyright -e Math:Math -e Object:Object > ./dist/ms-util.min.js",
+    "dist": "npm run babelise && npm run doctoc && npm test",
     "doctoc": "doctoc ./README.md",
     "prepublish": "npm run dist"
   },
