@@ -4,10 +4,10 @@
   "description": "For all your millisecond conversion needs",
   "main": "./dist/ms-util.min.js",
   "scripts": {
-    "test": "ava",
+    "test": "nyc --reporter=lcov --reporter=text ava",
     "babelise:index": "babel ./src/index.js | uglifyjs --mangle --compress > ./dist/ms-util.min.js",
-    "precommit": "npm run babelise:index",
-    "prepush": "npm test"
+    "dist": "npm run babelise:index && npm test",
+    "prepublish": "npm run dist"
   },
   "repository": {
     "type": "git",
@@ -23,14 +23,15 @@
   "bugs": {
     "url": "https://github.com/Alorel/node-ms-util/issues"
   },
-  "homepage": "https://github.com/Alorel/node-ms-util#readme",
+  "homepage": "https://github.com/Alorel/node-ms-util",
   "devDependencies": {
     "ava": "^0.17",
-    "babel-cli": "^6.18",
-    "babel-preset-latest": "^6.16",
-    "babel-register": "^6.18",
-    "husky": "^0.12",
-    "uglify-js": "^2.7"
+    "babel-cli": "^6.0",
+    "babel-preset-latest": "^6.0",
+    "babel-register": "^6.0",
+    "coveralls": "^2.11",
+    "nyc": "^10.0",
+    "uglify-js": "^2.0"
   },
   "ava": {
     "require": [

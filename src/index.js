@@ -34,7 +34,7 @@
     const doPad = (input) => {
         input.millis = pad(input.millis, 3);
         for (let k of ['hours', 'minutes', 'seconds']) {
-            input[k] = pad(input[k], 2);
+            input[k] = pad(input[k]);
         }
         return input;
     };
