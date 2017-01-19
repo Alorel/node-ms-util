@@ -39,6 +39,11 @@
         return input;
     };
 
+    /**
+     * Parse the given millis and return the number of days, hours, minutes seconds and ms they translate to.
+     * @param {Number} ms Input millis
+     * @returns {{days: Number, hours: Number, minutes: Number, seconds: Number, millis: Number, input: Number}}
+     */
     const parse = ms => {
         const days = floor(ms / day);
         const hours = floor((ms % day) / hour);
@@ -49,8 +54,30 @@
         return {days, hours, minutes, seconds, millis, input: ms};
     };
 
+    /**
+     * Parse the given millis to a word string, e.g. 3660000 ms would become 01hr 01min 00sec by default.
+     * @param {Number} ms Input millis
+     * @param {Object} [cfg] Configuration. Available keys:
+     * <ul>
+     *     <li><b>pad</b>: whether to pad the output numbers with zeroes (default: true)</li>
+     *     <li><b>forceMS</b>: whether to display milliseconds even if ms >= 1000 (default: false)</li>
+     *     <li>
+     *         <b>lang</b>: language pack override. The default is
+     *         <pre>
+     *         {<br/>
+     *              ms: "ms",<br/>
+     *              sec: "sec",<br/>
+     *              min: "min",<br/>
+     *              hour: "hr",<br/>
+     *              day: "d"<br/>
+     *          }
+     *             </pre>
+     *     </li>
+     * </ul>
+     * @returns {string}
+     */
     const toWords = (ms, cfg) => {
-        cfg = Object.assign({}, defaultCfg, cfg);
+        cfg = Object.assign({}, defaultCfg, cfg || {});
         let parsed = parse(ms);
         if (cfg.pad) {
             parsed = doPad(parsed);
@@ -77,8 +104,18 @@
         return ret.join(" ");
     };
 
+    /**
+     * Parse the given millis to a colon-separated string, e.g. 3660000 ms would become 01:01:00 by default
+     * @param {Number} ms Input millis
+     * @param {Object} [cfg] Configuration. Available keys:
+     * <ul>
+     *     <li><b>pad</b>: whether to pad the output numbers with zeroes (default: true)</li>
+     *     <li><b>forceMS</b>: whether to display milliseconds even if ms >= 1000 (default: false)</li>
+     * </ul>
+     * @returns {string}
+     */
     const colonSeparated = (ms, cfg) => {
-        cfg = Object.assign({}, defaultCfg, cfg);
+        cfg = Object.assign({}, defaultCfg, cfg || {});
         let parsed = parse(ms);
         if (cfg.pad) {
             parsed = doPad(parsed);
