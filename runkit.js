@@ -1,6 +1,6 @@
 let parseMs = require('ms-util');
 let millis = 86407049;
 
-console.log(parseMs.parse(millis));
-console.log(parseMs.toWords(millis));
-console.log(parseMs.colonSeparated(millis));
+console.dir(parseMs.parse(millis));
+console.dir(parseMs.toWords(millis));
+console.dir(parseMs.colonSeparated(millis));

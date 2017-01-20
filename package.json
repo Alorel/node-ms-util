@@ -23,7 +23,7 @@
   "engines": {
     "node": ">=0.10"
   },
-  "runkitExampleFilename": "",
+  "runkitExampleFilename": "./runkit.js",
   "author": "Alorel <a.molcanovas@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -36,7 +36,6 @@
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-latest": "^6.0",
     "babel-register": "^6.0",
-    "bluebird": "^3.4.7",
     "coveralls": "^2.11",
     "doctoc": "^1.2",
     "nyc": "^10.0",
@@ -47,8 +46,5 @@
       "babel-register"
     ],
     "babel": "inherit"
-  },
-  "dependencies": {
-    "babel-core": "^6.22.1"
   }
 }
