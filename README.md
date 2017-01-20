@@ -32,6 +32,8 @@ You might want to check out the [ms](https://www.npmjs.com/package/ms) package. 
   
 # Base usage
 
+Note: play around with it on [Runkit](https://runkit.com/npm/ms-util)!
+
 ## Browser
 
 ```html
@@ -109,5 +111,5 @@ Where `ms` is the millis you want to convert and cfg is configuration with the f
 Usage:
 
 ```js
-console.log(parseMs.toWords(86407049)); // 1:00:00:07
+console.log(parseMs.colonSeparated(86407049)); // 1:00:00:07
 ```

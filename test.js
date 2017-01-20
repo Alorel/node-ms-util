@@ -1,5 +1,10 @@
 import test from "ava";
-const pkg = require('./src/index.js');
+
+if (typeof global.window === "undefined") {
+    global.window = {};
+}
+
+const pkg = require('./index.js');
 // const pkg = require('./dist/ms-util.min.js');
 const times = {
     justMS: 43,
@@ -26,7 +31,7 @@ test('ms:parse', t => {
 test('ms:words', t => {
     const words = {
         noPad: pkg.toWords(times.justMS, {pad: false}),
-        pad: pkg.toWords(times.justMS, {pad: true})
+        pad: pkg.toWords(times.justMS)
     };
     t.is(words.noPad, '43ms', 'No padding');
     t.is(words.pad, '043ms', 'padded');
@@ -60,7 +65,7 @@ test('seconds:words', t => {
     const words = {
         noPadNoMs: pkg.toWords(times.seconds, {pad: false, forceMS: false}),
         noPadMs: pkg.toWords(times.seconds, {pad: false, forceMS: true}),
-        padNoMs: pkg.toWords(times.seconds, {pad: true, forceMS: false}),
+        padNoMs: pkg.toWords(times.seconds),
         padMs: pkg.toWords(times.seconds, {pad: true, forceMS: true}),
     };
 
@@ -74,7 +79,7 @@ test('seconds:colon', t => {
     const colon = {
         noPadNoMs: pkg.colonSeparated(times.seconds, {pad: false, forceMS: false}),
         noPadMs: pkg.colonSeparated(times.seconds, {pad: false, forceMS: true}),
-        padNoMs: pkg.colonSeparated(times.seconds, {pad: true, forceMS: false}),
+        padNoMs: pkg.colonSeparated(times.seconds),
         padMs: pkg.colonSeparated(times.seconds, {pad: true, forceMS: true})
     };
 
@@ -102,7 +107,7 @@ test('minutes:words', t => {
     const words = {
         noPadNoMs: pkg.toWords(times.minutes, {pad: false, forceMS: false}),
         noPadMs: pkg.toWords(times.minutes, {pad: false, forceMS: true}),
-        padNoMs: pkg.toWords(times.minutes, {pad: true, forceMS: false}),
+        padNoMs: pkg.toWords(times.minutes),
         padMs: pkg.toWords(times.minutes, {pad: true, forceMS: true}),
     };
 
@@ -116,7 +121,7 @@ test('minutes:colon', t => {
     const colon = {
         noPadNoMs: pkg.colonSeparated(times.minutes, {pad: false, forceMS: false}),
         noPadMs: pkg.colonSeparated(times.minutes, {pad: false, forceMS: true}),
-        padNoMs: pkg.colonSeparated(times.minutes, {pad: true, forceMS: false}),
+        padNoMs: pkg.colonSeparated(times.minutes),
         padMs: pkg.colonSeparated(times.minutes, {pad: true, forceMS: true})
     };
 
@@ -144,7 +149,7 @@ test('hours:words', t => {
     const words = {
         noPadNoMs: pkg.toWords(times.hours, {pad: false, forceMS: false}),
         noPadMs: pkg.toWords(times.hours, {pad: false, forceMS: true}),
-        padNoMs: pkg.toWords(times.hours, {pad: true, forceMS: false}),
+        padNoMs: pkg.toWords(times.hours),
         padMs: pkg.toWords(times.hours, {pad: true, forceMS: true}),
     };
 
@@ -158,7 +163,7 @@ test('hours:colon', t => {
     const colon = {
         noPadNoMs: pkg.colonSeparated(times.hours, {pad: false, forceMS: false}),
         noPadMs: pkg.colonSeparated(times.hours, {pad: false, forceMS: true}),
-        padNoMs: pkg.colonSeparated(times.hours, {pad: true, forceMS: false}),
+        padNoMs: pkg.colonSeparated(times.hours),
         padMs: pkg.colonSeparated(times.hours, {pad: true, forceMS: true})
     };
 
@@ -186,7 +191,7 @@ test('days:words', t => {
     const words = {
         noPadNoMs: pkg.toWords(times.days, {pad: false, forceMS: false}),
         noPadMs: pkg.toWords(times.days, {pad: false, forceMS: true}),
-        padNoMs: pkg.toWords(times.days, {pad: true, forceMS: false}),
+        padNoMs: pkg.toWords(times.days),
         padMs: pkg.toWords(times.days, {pad: true, forceMS: true}),
     };
 
@@ -200,7 +205,7 @@ test('days:colon', t => {
     const colon = {
         noPadNoMs: pkg.colonSeparated(times.days, {pad: false, forceMS: false}),
         noPadMs: pkg.colonSeparated(times.days, {pad: false, forceMS: true}),
-        padNoMs: pkg.colonSeparated(times.days, {pad: true, forceMS: false}),
+        padNoMs: pkg.colonSeparated(times.days),
         padMs: pkg.colonSeparated(times.days, {pad: true, forceMS: true})
     };
 

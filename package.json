@@ -1,11 +1,11 @@
 {
   "name": "ms-util",
   "version": "0.1.0",
-  "description": "For all your millisecond conversion needs",
+  "description": "Convert milliseconds to something useful",
   "main": "./dist/ms-util.min.js",
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text ava",
-    "babelise": "babel ./src/index.js | uglifyjs --mangle --compress --comments Copyright -e Math:Math -e Object:Object > ./dist/ms-util.min.js",
+    "babelise": "babel ./index.js | uglifyjs --mangle --compress -e Math:Math -e Object:Object --comments Copyright > ./dist/ms-util.min.js",
     "dist": "npm run babelise && npm run doctoc && npm test",
     "doctoc": "doctoc ./README.md",
     "prepublish": "npm run dist"
@@ -17,8 +17,13 @@
   "keywords": [
     "ms",
     "millisecond",
-    "convert"
+    "convert",
+    "parse"
   ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "runkitExampleFilename": "",
   "author": "Alorel <a.molcanovas@gmail.com>",
   "license": "MIT",
   "bugs": {

@@ -146,11 +146,11 @@ const colonSeparated = (ms, cfg) => {
 };
 
 const out = {parse, toWords, colonSeparated};
+const undef = "undefined";
 
-if (typeof window !== "undefined") {
-    window.parseMs = out;
-}
-
-if (typeof module !== "undefined") {
+if (typeof module !== undef) {
     module.exports = out;
+}
+if (typeof window !== undef) {
+    window.parseMs = out;
 }
