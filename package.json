@@ -5,7 +5,7 @@
   "main": "./dist/ms-util.min.js",
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text ava",
-    "babelise": "babel ./index.js | uglifyjs --mangle --compress -e Math:Math -e Object:Object --comments Copyright > ./dist/ms-util.min.js",
+    "babelise": "babel ./index.js -o ./dist/ms-util.js && uglifyjs ./dist/ms-util.js  --mangle --compress -e Math:Math -e Object:Object --comments Copyright > ./dist/ms-util.min.js",
     "dist": "npm run babelise && npm run doctoc && npm test",
     "doctoc": "doctoc ./README.md",
     "prepublish": "npm run dist"
@@ -36,6 +36,7 @@
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-latest": "^6.0",
     "babel-register": "^6.0",
+    "bluebird": "^3.4.7",
     "coveralls": "^2.11",
     "doctoc": "^1.2",
     "nyc": "^10.0",
@@ -46,5 +47,8 @@
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "dependencies": {
+    "babel-core": "^6.22.1"
   }
 }
