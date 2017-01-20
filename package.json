@@ -1,6 +1,6 @@
 {
   "name": "ms-util",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert milliseconds to something useful",
   "main": "./dist/ms-util.js",
   "scripts": {
