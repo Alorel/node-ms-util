@@ -2,7 +2,7 @@
   "name": "ms-util",
   "version": "0.1.0",
   "description": "Convert milliseconds to something useful",
-  "main": "./dist/ms-util.min.js",
+  "main": "./dist/ms-util.js",
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text ava",
     "babelise": "babel ./index.js -o ./dist/ms-util.js && uglifyjs ./dist/ms-util.js  --mangle --compress -e Math:Math -e Object:Object --comments Copyright > ./dist/ms-util.min.js",
