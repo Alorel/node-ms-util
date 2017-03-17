@@ -12,6 +12,8 @@ cache:
     - node_modules
     - ~/.npm
 
+install: npm install coveralls@^2.11
+
 script:
   - npm test
 
