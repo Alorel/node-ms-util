@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/Alorel/node-ms-util.svg?branch=master)](https://travis-ci.org/Alorel/node-ms-util)
-[![Build status](https://ci.appveyor.com/api/projects/status/1h3nr6xb6gpf0jku/branch/master?svg=true)](https://ci.appveyor.com/project/Alorel/node-ms-util/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/Alorel/node-ms-util/badge.svg?branch=master)](https://coveralls.io/github/Alorel/node-ms-util?branch=master)
 
-[![NPM](https://nodei.co/npm/ms-util.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ms-util/)
+[![NPM](https://nodei.co/npm/ms-util.png?downloads=false&downloadRank=false&stars=false)](https://www.npmjs.com/package/ms-util/)
 
 Converting millis to a human-readable string is a pain. It doesn't have to be.
 
