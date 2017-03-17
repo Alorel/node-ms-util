@@ -20,7 +20,7 @@
     "parse"
   ],
   "engines": {
-    "node": ">=0.10"
+    "node": ">=4.0"
   },
   "runkitExampleFilename": "./runkit.js",
   "author": "Alorel <a.molcanovas@gmail.com>",
