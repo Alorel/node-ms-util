@@ -8,6 +8,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
  * Copyright (c) Art <a.molcanovas@gmail.com>
  * Licensed under MIT: https://github.com/Alorel/node-ms-util/blob/master/LICENSE
  */
+
 var defaultLangpack = {
     ms: "ms",
     sec: "sec",

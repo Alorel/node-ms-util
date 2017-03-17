@@ -36,8 +36,10 @@ Note: play around with it on [Runkit](https://runkit.com/npm/ms-util)!
 
 ## Browser
 
+It's always best to use a specific version - you'll find the CDN URLs [here](https://www.jsdelivr.com/projects/ms-util).
+
 ```html
-<script src="path-to-ms-util-min.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/ms-util/latest/ms-util.min.js" type="application/javascript"></script>
 <!-- It is now available as window.parseMs -->
 ```
 

@@ -1,14 +1,13 @@
 {
   "name": "ms-util",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert milliseconds to something useful",
   "main": "./dist/ms-util.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text ava",
-    "babelise": "babel ./index.js -o ./dist/ms-util.js && uglifyjs ./dist/ms-util.js  --mangle --compress -e Math:Math -e Object:Object --comments Copyright > ./dist/ms-util.min.js",
+    "test": "nyc --reporter=text ava",
+    "babelise": "babelnp ./index.js -o ./dist/ms-util.js && uglifyjs ./dist/ms-util.js  --mangle --compress -e Math:Math -e Object:Object --comments /Copyright/ > ./dist/ms-util.min.js",
     "dist": "npm run babelise && npm run doctoc && npm test",
-    "doctoc": "doctoc ./README.md",
-    "prepublish": "npm run dist"
+    "doctoc": "doctoc ./README.md"
   },
   "repository": {
     "type": "git",
@@ -31,12 +30,11 @@
   },
   "homepage": "https://github.com/Alorel/node-ms-util",
   "devDependencies": {
-    "ava": "^0.17",
+    "ava": "^0.18",
     "babel-cli": "^6.0",
-    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-plugin-transform-object-assign": "^6.8",
     "babel-preset-latest": "^6.0",
     "babel-register": "^6.0",
-    "coveralls": "^2.11",
     "doctoc": "^1.2",
     "nyc": "^10.0",
     "uglify-js": "^2.0"

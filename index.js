@@ -2,6 +2,7 @@
  * Copyright (c) Art <a.molcanovas@gmail.com>
  * Licensed under MIT: https://github.com/Alorel/node-ms-util/blob/master/LICENSE
  */
+
 const defaultLangpack = {
     ms: "ms",
     sec: "sec",
