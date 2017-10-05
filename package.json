@@ -31,6 +31,7 @@
   "homepage": "https://github.com/Alorel/node-ms-util",
   "devDependencies": {
     "ava": "^0.18",
+    "coveralls": "^3.0",
     "babel-cli": "^6.0",
     "babel-plugin-transform-object-assign": "^6.8",
     "babel-preset-latest": "^6.0",
