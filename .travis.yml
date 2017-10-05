@@ -2,18 +2,17 @@ language: node_js
 sudo: false
 dist: trusty
 node_js:
-  - "7"
-  - "6"
-  - "5"
-  - "4"
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
 
 cache:
   directories:
     - node_modules
     - ~/.npm
-
-before_install:
-  - node -e "var pkg = require('./package.json'); pkg.devDependencies.coveralls = '^2.11'; require('fs').writeFileSync('./package.json', JSON.stringify(pkg));";
+    - ~/.nvm
 
 script:
   - npm test
