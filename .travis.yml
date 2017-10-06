@@ -1,15 +1,19 @@
 language: node_js
 
-os:
-  - linux
-  - osx
-
-node_js:
-  - 8
-  - 7
-  - 6
-  - 5
-  - 4
+matrix:
+  - os: osx
+    node_js:
+      - 8
+      - 7
+      - 6
+      - 5
+  - os: linux
+    node_js:
+      - 8
+      - 7
+      - 6
+      - 5
+      - 4
 
 cache:
   directories:
