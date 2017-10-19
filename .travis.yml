@@ -1,32 +1,16 @@
 language: node_js
 sudo: false
 
-matrix:
-  include:
-    - os: osx
-      node_js: 8
-    - os: osx
-      node_js: 7
-    - os: osx
-      node_js: 6
-    - os: osx
-      node_js: 5
-    - os: linux
-      node_js: 8
-    - os: linux
-      node_js: 7
-    - os: linux
-      node_js: 6
-    - os: linux
-      node_js: 5
-    - os: linux
-      node_js: 4
+node_js:
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
 
 cache:
   directories:
     - node_modules
-    - ~/.npm
-    - ~/.nvm
 
 script:
   - npm test
@@ -34,7 +18,3 @@ script:
 
 after_success:
   - ./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls
-
-notifications:
-  on_success: change
-  on_failure: always
