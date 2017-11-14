@@ -7,8 +7,6 @@ Converting millis to a human-readable string is a pain. It doesn't have to be.
 
 # Table of contents
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Alorel/node-ms-util.svg)](https://greenkeeper.io/)
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
